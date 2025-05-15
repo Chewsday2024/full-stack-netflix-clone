@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { fetchFromTMDB } from "../services/tmdb.service.js"
-import { similarTvType, tvDetailType, tvTrailerType, tvType } from "../types/tv/tv.types.js"
+import { similarTvType, tvDetailType, tvTrailerType, tvType } from "../types/tv.js"
 
 
 

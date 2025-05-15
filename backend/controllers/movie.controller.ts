@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { fetchFromTMDB } from "../services/tmdb.service.js";
-import { movieDetailType, movieTypeNoDate, movieTypeWithDate, similarMovieType, trailerType } from "../types/movies/movie.types.js";
+import { movieDetailType, movieTypeNoDate, movieTypeWithDate, similarMovieType, trailerType } from "../types/movie.js";
 
 
 
