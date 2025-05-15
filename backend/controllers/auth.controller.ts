@@ -6,8 +6,6 @@ import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 
 
 
-
-
 export async function signup( req: Request, res: Response ) {
   try {
     const { username, password, email  }: userType = req.body
@@ -79,10 +77,51 @@ export async function signup( req: Request, res: Response ) {
 
 
 export async function login( req: Request, res: Response ) {
-  
+  try {
+    const { email, password}: userType = req.body
+
+    if (!email || !password) {
+      res.status(400).json({ success: false, message: 'All fields are required' })
+      return
+    }
+
+    const user = await User.findOne({ email: email })
+
+    if (!user) {
+      res.status(404).json({ success: false, message: 'Invalid credentials' })
+      return
+    }
+
+    const isPasswordCorrect = await bcryptjs.compare(password, user.password)
+
+    if (!isPasswordCorrect) {
+      res.status(400).json({ success: false, message: 'Invalid credentials' })
+      return
+    }
+
+
+    generateTokenAndSetCookie(user._id.toString(), res)
+
+    const { password: _, ...userWithoutPassword } = user.toObject()
+    
+    res.status(201).json({ success: true, user: userWithoutPassword})
+  } catch (error: any) {
+    console.log('Error in login controller', error.message)
+
+    res.status(500).json({ success: false, message: 'Internal server error' })
+  }
 }
 
 
 export async function logout( req: Request, res: Response ) {
-  
+  try {
+    res.clearCookie('jwt-netfilx')
+
+    res.status(200).json({ success: true, message: 'Logged out successfully' })
+    
+  } catch (error: any) {
+    console.log('Error in logout controller', error.message)
+
+    res.status(500).json({ success: false, message: 'Internal server error' })
+  }
 }
