@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { User, userType } from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
+import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 
 
 
@@ -58,12 +59,17 @@ export async function signup( req: Request, res: Response ) {
       image
     })
 
+    
+    generateTokenAndSetCookie(newUser._id.toString(), res)
+    
     await newUser.save()
-
+    
     const { password: _, ...userWithoutPassword } = newUser.toObject()
     
-
     res.status(201).json({ success: true, user: userWithoutPassword})
+  
+
+
   } catch (error: any) {
     console.log('Error in signup controller', error.message)
 

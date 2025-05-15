@@ -1,6 +1,0 @@
-{
-  "watch": ["backend"],
-  "ext": ".ts, .js",
-  "ignore": ["node_modules"],
-  "exec": "cross-env NODE_ENV=development tsx backend/server.ts"
-}
