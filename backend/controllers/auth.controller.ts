@@ -115,7 +115,7 @@ export async function login( req: Request, res: Response ) {
 
 export async function logout( req: Request, res: Response ) {
   try {
-    res.clearCookie('jwt-netfilx')
+    res.clearCookie('jwt-netflix')
 
     res.status(200).json({ success: true, message: 'Logged out successfully' })
     
