@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 
+@layer base {
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px rgba(0, 0, 0) inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
 .hero-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('/hero.png');
 }
