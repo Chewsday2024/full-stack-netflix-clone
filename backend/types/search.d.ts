@@ -2,7 +2,6 @@ import { movieTypeNoDate } from "./movie.js"
 import { tvType } from "./tv.js"
 
 
-
 export type searchPersonType = {
   page: number
   results: {
@@ -19,7 +18,6 @@ export type searchPersonType = {
   total_pages: number
   total_results: number
 }
-
 
 
 export type searchMovieType = {
@@ -43,7 +41,6 @@ export type searchMovieType = {
   total_pages: number
   total_results: number
 }
-
 
 
 export type searchTvType = {

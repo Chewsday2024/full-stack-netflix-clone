@@ -1,11 +1,14 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useAuthStore } from "../store/authUser"
 
 function LoginPage() {
   const [loginValue, setLoginValue] = useState({
     email: '',
     password: ''
   })
+
+  const { login } = useAuthStore()
 
   const handleLoginValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -16,9 +19,9 @@ function LoginPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(loginValue)
+    login(loginValue)
   }
   return (
     <div className="h-screen w-full hero-bg">
@@ -32,7 +35,7 @@ function LoginPage() {
         <div className="w-full max-w-md p-8 space-y-6 bg-black/60 rounded-lg shadow-md">
           <h1 className="text-center text-white text-2xl font-bold mb-4">Login</h1>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleLogin}>
             <div>
               <label htmlFor="email" className="text-sm font-medium text-gray-300 block">
                 Email
@@ -58,6 +61,7 @@ function LoginPage() {
                 placeholder="·········"
                 id="password"
                 name="password"
+                autoComplete="off"
                 onChange={(e) => handleLoginValue(e)}
                 className="w-full px-3 py-2 mt-1 border border-gray-700 rounded-md bg-transparent text-white focus:outline-none focus:ring"
               />
