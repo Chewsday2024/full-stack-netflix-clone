@@ -1,12 +1,23 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import HomePage from "./pages/homepages/HomePage"
-import LoginPage from "./pages/LoginPage"
-import SignUpPage from "./pages/SignUpPage"
-import Footer from "./components/Footer"
 import { Toaster } from "react-hot-toast"
-import { useAuthStore } from "./store/authUser"
-import { useEffect } from "react"
 import { Loader } from "lucide-react"
+import { useEffect } from "react"
+
+
+
+import HomePage from "./pages/homepages/HomePage"
+import SignUpPage from "./pages/SignUpPage"
+import LoginPage from "./pages/LoginPage"
+import WatchPage from "./pages/WatchPage"
+import Footer from "./components/Footer"
+
+
+
+
+import { useAuthStore } from "./store/authUser"
+
+
+
 
 function App() {
   const { user, isCheckingAuth, authCheck } = useAuthStore()
@@ -32,6 +43,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={user ? <Navigate to={'/'} /> : <LoginPage />} />
         <Route path='/signup' element={user ? <Navigate to={'/'} /> : <SignUpPage />} />
+        <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={'/'} />} />
       </Routes>
 
       <Footer />
