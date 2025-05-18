@@ -18,4 +18,5 @@ export type contentType = {
   original_name?: string
   first_air_date?: string
   origin_country?: string[]
+  profile_path?: string
 }

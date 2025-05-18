@@ -15,6 +15,7 @@ import Footer from "./components/Footer"
 
 
 import { useAuthStore } from "./store/authUser"
+import SearchPage from "./pages/SearchPage"
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path='/login' element={user ? <Navigate to={'/'} /> : <LoginPage />} />
         <Route path='/signup' element={user ? <Navigate to={'/'} /> : <SignUpPage />} />
         <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={'/'} />} />
+        <Route path='/search' element={user ? <SearchPage /> : <Navigate to={'/login'} />} />
       </Routes>
 
       <Footer />
