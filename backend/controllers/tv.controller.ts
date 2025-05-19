@@ -4,14 +4,6 @@ import { similarTvType, tvDetailType, tvTrailerType, tvType } from "../types/tv.
 
 
 
-
-
-
-
-
-
-
-
 export async function getTrendingTv(req: Request, res: Response) {
   try {
     const data: tvType = await fetchFromTMDB('https://api.themoviedb.org/3/trending/tv/day?language=zh-TW')

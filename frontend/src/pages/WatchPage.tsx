@@ -137,12 +137,7 @@ function WatchPage() {
   }
 
 
-console.log(currentTrailerIdx)
 
-
-console.log('trailers',trailers)
-console.log('content',content)
-console.log('similarContent',similarContent)
 
   return (
     <div className="bg-black min-h-screen text-white">
