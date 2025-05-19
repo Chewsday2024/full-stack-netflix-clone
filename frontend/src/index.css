@@ -40,3 +40,23 @@
     display: none; /* Chrome, Safari, Opera */
   }
 }
+
+
+
+.error-page--content::before {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.1) 55%,
+    transparent 70%
+  );
+
+  bottom: -10vw;
+  content: '';
+  position: absolute;
+  left: 10vw;
+  right: 10vw;
+  top: -10vw;
+  z-index: -1;
+}

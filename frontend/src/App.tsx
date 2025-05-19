@@ -5,7 +5,10 @@ import { useEffect } from "react"
 
 
 
+import SearchHistoryPage from "./pages/SearchHistoryPage"
 import HomePage from "./pages/homepages/HomePage"
+import NotfoundPage from "./pages/NotfoundPage"
+import SearchPage from "./pages/SearchPage"
 import SignUpPage from "./pages/SignUpPage"
 import LoginPage from "./pages/LoginPage"
 import WatchPage from "./pages/WatchPage"
@@ -15,8 +18,6 @@ import Footer from "./components/Footer"
 
 
 import { useAuthStore } from "./store/authUser"
-import SearchPage from "./pages/SearchPage"
-import SearchHistoryPage from "./pages/SearchHistoryPage"
 
 
 
@@ -48,6 +49,7 @@ function App() {
         <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={'/login'} />} />
         <Route path='/search' element={user ? <SearchPage /> : <Navigate to={'/login'} />} />
         <Route path='/history' element={user ? <SearchHistoryPage /> : <Navigate to={'/login'} />} />
+        <Route path='/*' element={<NotfoundPage />} />
       </Routes>
 
       <Footer />

@@ -117,7 +117,7 @@ function SearchPage() {
                     </div>
                   )
                   : (
-                    <Link to={'/watch/' + result.id}>
+                    <Link to={'/watch/' + result.id} onClick={() => setContentType(activeTab)}>
                       <img
                         src={ORIGINAL_IMG_BASE_URL + result.poster_path}
                         alt={result.title || result.name}
