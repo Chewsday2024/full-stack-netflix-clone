@@ -49,7 +49,7 @@ function SearchPage() {
   }
 
 
-  console.log(results)
+  
 
 
   return (

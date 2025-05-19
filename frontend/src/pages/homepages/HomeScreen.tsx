@@ -11,7 +11,7 @@ import { useState } from "react"
 function HomeScreen() {
   const { trendingContent }= useGetTrendingContent()
 
-  console.log(trendingContent)
+  
 
   const { contentType } = useContentStore()
   const [isImgLoading, setIsImgLoading] = useState(true)
