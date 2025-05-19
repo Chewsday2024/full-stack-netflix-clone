@@ -16,6 +16,7 @@ import Footer from "./components/Footer"
 
 import { useAuthStore } from "./store/authUser"
 import SearchPage from "./pages/SearchPage"
+import SearchHistoryPage from "./pages/SearchHistoryPage"
 
 
 
@@ -44,8 +45,9 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={user ? <Navigate to={'/'} /> : <LoginPage />} />
         <Route path='/signup' element={user ? <Navigate to={'/'} /> : <SignUpPage />} />
-        <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={'/'} />} />
+        <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={'/login'} />} />
         <Route path='/search' element={user ? <SearchPage /> : <Navigate to={'/login'} />} />
+        <Route path='/history' element={user ? <SearchHistoryPage /> : <Navigate to={'/login'} />} />
       </Routes>
 
       <Footer />

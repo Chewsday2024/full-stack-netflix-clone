@@ -120,7 +120,7 @@ export async function deleteItemFromSearchHistory(req: Request, res: Response) {
   try {
     await User.findByIdAndUpdate(req.user?._id, {
       $pull: {
-        searchHistory: { id: Number(id)}
+        searchHistory: { createdAt: new Date(id)}
       }
     })
 

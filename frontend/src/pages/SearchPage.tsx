@@ -1,12 +1,21 @@
-import { useState } from "react"
-import { useContentStore } from "../store/content"
-import Navbar from "../components/Navbar"
-import { Search } from "lucide-react"
 import axios, { AxiosError } from "axios"
-import toast from "react-hot-toast"
-import type { contentType } from "../../types/contentType"
 import { Link } from "react-router-dom"
+import { Search } from "lucide-react"
+import toast from "react-hot-toast"
+import { useState } from "react"
+
+
 import { ORIGINAL_IMG_BASE_URL } from "../utils/constants"
+import Navbar from "../components/Navbar"
+
+
+import { useContentStore } from "../store/content"
+
+
+import type { contentType } from "../../types/contentType"
+
+
+
 
 function SearchPage() {
   const [activeTab, setActiveTab] = useState('movie')
