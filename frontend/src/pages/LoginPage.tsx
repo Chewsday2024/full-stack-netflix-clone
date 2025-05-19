@@ -8,7 +8,7 @@ function LoginPage() {
     password: ''
   })
 
-  const { login } = useAuthStore()
+  const { login, isLoggingIn } = useAuthStore()
 
   const handleLoginValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -67,15 +67,18 @@ function LoginPage() {
               />
             </div>
 
-            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 hover:cursor-pointer">
-              Login
+            <button
+              className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 hover:cursor-pointer"
+              disabled={isLoggingIn}
+            >
+              {isLoggingIn ? 'Loading...' : 'Login'}
             </button>
           </form>
 
           <div className="text-center text-gray-400">
             Don't have an account?&nbsp;&nbsp;
 
-            <Link to={'/login'} className="text-red-500 hover:underline">
+            <Link to={'/signup'} className="text-red-500 hover:underline">
               Sign Up
             </Link>
           </div>

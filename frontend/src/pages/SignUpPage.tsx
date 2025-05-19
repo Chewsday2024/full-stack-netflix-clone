@@ -12,7 +12,7 @@ function SignUpPage() {
     password: ''
   })
 
-  const { signup } = useAuthStore()
+  const { signup, isSigningUp } = useAuthStore()
 
 
   const handleSignupValue = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,8 +89,11 @@ function SignUpPage() {
               />
             </div>
 
-            <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 hover:cursor-pointer">
-              Sign Up
+            <button
+              className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 hover:cursor-pointer"
+              disabled={isSigningUp}
+            >
+              {isSigningUp ? 'Loading...' : 'Sign Up'}
             </button>
           </form>
 
