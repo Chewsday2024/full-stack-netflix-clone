@@ -24,12 +24,12 @@
 
 ## 前端技術
 
-- React
-- TypeScript ( 教學用的是 JavaScript ，改用 TypeScript 自我學習 )
-- TailwindCSS
-- Zustand
-- Vite
-- RWD
+- `React`
+- `TypeScript` ( 教學用的是 JavaScript ，改用 TypeScript 自我學習 )
+- `TailwindCSS`
+- `Zustand`
+- `Vite`
+- `RWD`
 
 
 <br />
@@ -37,22 +37,22 @@
 
 ## 後端技術
 
-- Node JS
-- Express JS
-- TypeScript ( 教學用的是 JavaScript ，改用 TypeScript 自我學習 )
+- `Node JS`
+- `Express JS`
+- `TypeScript` ( 教學用的是 JavaScript ，改用 TypeScript 自我學習 )
 
 
 ## 資料庫
 
-- MongoDB
-  - 資料庫工具：Mongoose
+- `MongoDB`
+  - 資料庫工具：`Mongoose`
 
 
 ## 版本控制
 
-- Git
+- `Git`
 
 
 ## 佈署網站
 
-- Render
+- `Render`
