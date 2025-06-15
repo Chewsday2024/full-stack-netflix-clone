@@ -7,13 +7,9 @@
 ## 🚨注意事項
 ### 由於佈署在 Render 上且使用免費方案，因此會有待機狀況產生，會需要等候幾秒鐘喚醒時間
 
-<br />
+🚀[作品連結](https://full-stack-netflix-clone-20pd.onrender.com)<br />
 
-#### 🚀[作品連結](https://full-stack-netflix-clone-20pd.onrender.com)
-
-<br />
-
-#### 🎬[教學連結](https://www.youtube.com/watch?v=MDZC8VDZnV8) 8:19:50 開始
+🎬[教學連結](https://www.youtube.com/watch?v=MDZC8VDZnV8) 8:19:50 開始<br />
 
 ---
 
