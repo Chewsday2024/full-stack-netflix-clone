@@ -11,6 +11,7 @@
 
 ---
 
+<br />
 
 ## 作品測試用資訊
 
@@ -41,17 +42,20 @@
 - `Express JS`
 - `TypeScript` ( 教學用的是 JavaScript ，改用 TypeScript 自我學習 )
 
+<br />
 
 ## 資料庫
 
 - `MongoDB`
   - 資料庫工具：`Mongoose`
 
+<br />
 
 ## 版本控制
 
 - `Git`
 
+<br />
 
 ## 佈署網站
 
